@@ -1,0 +1,17 @@
+/* CSS Main Document */
+html,
+body {
+  height: 98%;
+  width: 99%;
+}
+#PMap {
+  width: 100%;
+  min-height: 100%;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+colormap {
+  background-color: rgb(234, 234, 234);
+}
