@@ -1,6 +1,5 @@
 // JavaScript Document auto !important
-loading.innerText = "";
-
+loading.innerText = '';
 var yx = L.latLng;
 
 var coordinates = (x, y) => {
@@ -21,6 +20,7 @@ L.tileLayer(``, {
     'Map data &copy; <a href="https://www.host5.biz/">Host5 Hosting</a>©'
 }).addTo(PMap);
 
+/** NEURONS PROPERTIES */
 const neuronSmall = L.icon({
   iconUrl: 'resources/images/1.png',
   iconSize: [15, 15]
@@ -36,7 +36,7 @@ const neuronLarge = L.icon({
   iconSize: [30, 30]
 });
 
-/** NEURONAS */
+/** NEURONS */
 var sol = coordinates(175.2, 145.0);
 var mizar = coordinates(41.6, 130.1);
 var kruegerZ = coordinates(13.4, 56.5);
@@ -88,7 +88,7 @@ var travel = L.polyline([marker2, marker5]).addTo(PMap);
 
 PMap.doubleClickZoom.disable();
 
-// Add new point in the map
+/** NEW NEURON */
 PMap.on('dblclick', event => {
   let latLng = PMap.mouseEventToLatLng(event.originalEvent);
   L.marker([latLng.lat, latLng.lng], { icon: neuronSmall }).addTo(PMap);
