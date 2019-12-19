@@ -1,26 +1,18 @@
 // JavaScript Document auto !important
+loading.innerText = "";
+
 var yx = L.latLng;
 
-var xy = function(x, y) {
+var coordinates = (x, y) => {
   if (L.Util.isArray(x)) {
-    // When doing xy([x, y]);
     return yx(x[1], x[0]);
   }
-  return yx(y, x); // When doing xy(x, y);
+  return yx(y, x);
 };
 
 let PMap = L.map('PMap', { crs: L.CRS.Simple }).setView([89, 100], 0);
 
 var searchLayer = L.geoJson().addTo(PMap);
-
-// L.control.scale().addTo(PMap);
-
-// setInterval(function(){
-//    map.setView([0, 0]);
-//    setTimeout(function(){
-//        map.setView([60, 0]);
-//    }, 2000);
-// }, 4000);
 
 L.tileLayer(``, {
   minZoom: 0,
@@ -29,56 +21,58 @@ L.tileLayer(``, {
     'Map data &copy; <a href="https://www.host5.biz/">Host5 Hosting</a>©'
 }).addTo(PMap);
 
-// let marker = L.marker([51.5, -0.09]).addTo(PMap)
-
-let iconMarker = L.icon({
+const neuronSmall = L.icon({
   iconUrl: 'resources/images/1.png',
   iconSize: [15, 15]
 });
 
-let iconMarker2 = L.icon({
-  iconUrl: 'resources/images/1.png',
-  iconSize: [30, 30]
-});
-let iconMarker3 = L.icon({
+const neuronMedium = L.icon({
   iconUrl: 'resources/images/2.png',
   iconSize: [20, 20]
 });
 
-var sol = xy(175.2, 145.0);
-var mizar = xy(41.6, 130.1);
-var kruegerZ = xy(13.4, 56.5);
-var deneb = xy(218.7, 8.3);
-var marker2 = xy(30, 9);
-var marker3 = xy(60, -0.09);
-var marker4 = xy(100, 89);
-var marker5 = xy(99, 25);
+const neuronLarge = L.icon({
+  iconUrl: 'resources/images/1.png',
+  iconSize: [30, 30]
+});
 
-L.marker(sol, { icon: iconMarker3 })
+/** NEURONAS */
+var sol = coordinates(175.2, 145.0);
+var mizar = coordinates(41.6, 130.1);
+var kruegerZ = coordinates(13.4, 56.5);
+var deneb = coordinates(218.7, 8.3);
+var marker2 = coordinates(30, 9);
+var marker3 = coordinates(60, -0.09);
+var marker4 = coordinates(100, 89);
+var marker5 = coordinates(99, 25);
+
+/** MESSAGES */
+L.marker(sol, { icon: neuronMedium })
   .addTo(PMap)
   .bindPopup('Hola');
-L.marker(mizar, { icon: iconMarker3 })
+L.marker(mizar, { icon: neuronMedium })
   .addTo(PMap)
   .bindPopup('uwu');
-L.marker(kruegerZ, { icon: iconMarker3 })
+L.marker(kruegerZ, { icon: neuronMedium })
   .addTo(PMap)
   .bindPopup('Mhmm');
-L.marker(deneb, { icon: iconMarker3 })
+L.marker(deneb, { icon: neuronMedium })
   .addTo(PMap)
   .bindPopup('?');
-L.marker(marker2, { icon: iconMarker2 })
+L.marker(marker2, { icon: neuronLarge })
   .addTo(PMap)
   .bindPopup('Soy un puntito');
-L.marker(marker3, { icon: iconMarker })
+L.marker(marker3, { icon: neuronSmall })
   .addTo(PMap)
   .bindPopup('Soy otro puntito');
-L.marker(marker4, { icon: iconMarker })
+L.marker(marker4, { icon: neuronSmall })
   .addTo(PMap)
   .bindPopup('Saludos forastero!');
-L.marker(marker5, { icon: iconMarker })
+L.marker(marker5, { icon: neuronSmall })
   .addTo(PMap)
   .bindPopup('Uhhh');
 
+/** AXONS */
 var travel = L.polyline([sol, deneb]).addTo(PMap);
 var travel = L.polyline([sol, mizar]).addTo(PMap);
 var travel = L.polyline([sol, deneb]).addTo(PMap);
@@ -93,10 +87,11 @@ var travel = L.polyline([kruegerZ, marker2]).addTo(PMap);
 var travel = L.polyline([marker2, marker5]).addTo(PMap);
 
 PMap.doubleClickZoom.disable();
-PMap.on('dblclick', e => {
-  let latLng = PMap.mouseEventToLatLng(e.originalEvent);
 
-  L.marker([latLng.lat, latLng.lng], { icon: iconMarker }).addTo(PMap);
+// Add new point in the map
+PMap.on('dblclick', event => {
+  let latLng = PMap.mouseEventToLatLng(event.originalEvent);
+  L.marker([latLng.lat, latLng.lng], { icon: neuronSmall }).addTo(PMap);
 });
 
 var bounds = [[0, 0], [3000, 3000]];

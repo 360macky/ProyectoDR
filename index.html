@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="resources/leaflet/leaflet.css" />
-    <link rel="stylesheet" href="resources/css/platform.css" />
-    <link rel="stylesheet" href="resources/css/changecolor.css" />
     <title>Plataforma</title>
   </head>
   <body>
+    <!--NeuralNetworkMap-->
     <div id="PMap" translate="no" class="colormap"></div>
     <div id="bg-selector">
       <div class="color gray" data-value="#eaeaea"></div>
@@ -19,12 +17,17 @@
       <div
         class="color picker"
         onclick="pickColor();"
-        style="display: inline-block;"
+        style="display: inline-block; display: none;"
       >
         <img src="resources/images/Edit-512.png" />
       </div>
     </div>
-    <input id="colorpicker" type="color" />
+    <div id="messageLoading"></div>
+    <link rel="stylesheet" href="resources/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="resources/css/platform.css" />
+    <script src="resources/js/preparingMap.js"></script>
+    <input id="colorpicker" type="color" style="display: none;"/>
+    <link rel="stylesheet" href="resources/css/changecolor.css" />
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
