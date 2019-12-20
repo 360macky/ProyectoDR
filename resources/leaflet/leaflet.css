@@ -514,8 +514,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  background: white;
-  color: #333;
+  background-color: #333;
+  color: white;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
 }
 .leaflet-container a.leaflet-popup-close-button {
@@ -528,13 +528,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
   width: 18px;
   height: 14px;
   font: 16px/14px Tahoma, Verdana, sans-serif;
-  color: #616161;
+  color: transparent;
   text-decoration: none;
   font-weight: bold;
   background: transparent;
 }
 .leaflet-container a.leaflet-popup-close-button:hover {
-  color: #000;
+  color: transparent;
 }
 .leaflet-popup-scrolled {
   overflow: auto;
