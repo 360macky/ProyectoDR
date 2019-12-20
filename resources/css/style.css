@@ -59,7 +59,7 @@ form {
 }
 
 .blue {
-  background-color: #00529c;
+  background-color: #00112c;
 }
 
 #colorpicker {
@@ -69,7 +69,7 @@ form {
 .title {
   position: absolute;
   font-family: 'Segoe UI', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.5s ease-out;
   color: white;
@@ -79,5 +79,5 @@ form {
 }
 
 .title:hover {
-  border-radius: 1rem;
+  padding: 0.5rem 2.5rem;
 }

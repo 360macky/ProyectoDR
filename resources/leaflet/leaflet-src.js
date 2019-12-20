@@ -4447,7 +4447,7 @@ var Map = Evented.extend({
 			data.layerPoint = this.containerPointToLayerPoint(data.containerPoint);
 			data.latlng = isMarker ? target.getLatLng() : this.layerPointToLatLng(data.layerPoint);
 		}
-
+		
 		for (var i = 0; i < targets.length; i++) {
 			targets[i].fire(type, data, true);
 			if (data.originalEvent._stopped ||
@@ -7203,9 +7203,7 @@ var IconDefault = Icon.extend({
 
 	options: {
 		iconUrl:       'marker-icon.png',
-		iconRetinaUrl: 'marker-icon-2x.png',
-		shadowUrl:     'marker-shadow.png',
-		iconSize:    [25, 41],
+		iconSize:    [25, 25],
 		iconAnchor:  [12, 41],
 		popupAnchor: [1, -34],
 		tooltipAnchor: [16, -28],
@@ -9851,7 +9849,7 @@ var Popup = DivOverlay.extend({
 
 	_close: function () {
 		if (this._map) {
-			this._map.closePopup(this);
+			/*this._map.closePopup(this);*/
 		}
 	},
 

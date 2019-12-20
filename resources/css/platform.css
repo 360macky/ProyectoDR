@@ -4,6 +4,7 @@ body {
   height: 98%;
   width: 99%;
 }
+
 #PMap {
   width: 100%;
   min-height: 100%;
@@ -12,6 +13,7 @@ body {
   top: 0;
   left: 0;
 }
-colormap {
-  background-color: rgb(234, 234, 234);
+
+.colormap {
+  background: #141E30;
 }
