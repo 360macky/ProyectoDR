@@ -9,25 +9,30 @@
   <body>
     <!--NeuralNetworkMap-->
     <div id="PMap" translate="no" class="colormap"></div>
-    <div id="bg-selector">
-      <div class="color gray" data-value="#eaeaea"></div>
-      <div class="color black" data-value="#000"></div>
-      <div class="color white" data-value="#fff"></div>
-      <div class="color blue" data-value="#00529c"></div>
-      <div
-        class="color picker"
-        onclick="pickColor();"
-        style="display: inline-block; display: none;"
-      >
-        <img src="resources/images/Edit-512.png" />
+    <div class="navbar">
+      <div id="bg-selector">
+        <div class="color gray" data-value="#eaeaea"></div>
+        <div class="color black" data-value="#000"></div>
+        <div class="color white" data-value="#fff"></div>
+        <div class="color blue" data-value="#00529c"></div>
+        <div
+          class="color picker"
+          onclick="pickColor();"
+          style="display: inline-block; display: none;"
+        >
+          <img src="resources/images/Edit-512.png" />
+        </div>
+      </div>
+      <div class="title">
+        Tema principal
       </div>
     </div>
     <div id="messageLoading"></div>
     <link rel="stylesheet" href="resources/leaflet/leaflet.css" />
     <link rel="stylesheet" href="resources/css/platform.css" />
     <script src="resources/js/preparingMap.js"></script>
-    <input id="colorpicker" type="color" style="display: none;"/>
-    <link rel="stylesheet" href="resources/css/changecolor.css" />
+    <input id="colorpicker" type="color" style="display: none;" />
+    <link rel="stylesheet" href="resources/css/style.css" />
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

@@ -14,7 +14,11 @@ p {
 form {
   margin: 0;
 }
-/* end base styles */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
 
 #bg-selector {
   font-size: 1em;
@@ -25,34 +29,55 @@ form {
 }
 
 .color {
-  width: 24px;
-  height: 24px;
-  border: 1px solid #555;
+  width: 28px;
+  height: 28px;
+  border: 1px solid white;
+  border-radius: 1rem;
   display: inline-block;
-  margin: 0 0 0 0.2em;
+  margin: 0 0.2rem;
   cursor: pointer;
   padding: 2px;
 }
+
 .color img {
   max-width: 100%;
   max-height: 100%;
   display: block;
 }
+
 .black {
   background-color: #000;
 }
+
 .gray,
 .picker {
   background-color: #eaeaea;
 }
+
 .white {
   background-color: #fff;
 }
+
 .blue {
   background-color: #00529c;
 }
+
 #colorpicker {
   visibility: hidden;
 }
 
+.title {
+  position: absolute;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
 
+.title:hover {
+  border-radius: 1rem;
+}
