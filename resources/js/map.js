@@ -14,7 +14,7 @@ var Pmap = L.map('PMap').setView([51.505, -0.09], 13);
 L.tileLayer('', {
   maxZoom: 15,
   minZoom: 13,
-  attribution: 'D. Roca Project - CC'
+  attribution: 'D. Roca Project - Creative Commons'
 }).addTo(Pmap);
 
 var neurons = [
